@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Connecting to the H2 database -->
+        <property name="hibernate.connection.driver_class">org.h2.Driver</property>
+        <property name="hibernate.connection.url">jdbc:h2:./BudgetManagement</property>
+        <property name="hibernate.hbm2ddl.auto">validate</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.connection.username">sa</property>
+        <property name="hibernate.connection.password">sa</property>
+
+        <!-- List of entities -->
+        <mapping class="it.unicam.cs.mpgc.jbudget125667.model.Family"/>
+        <mapping class="it.unicam.cs.mpgc.jbudget125667.model.BankAccount"/>
+        <mapping class="it.unicam.cs.mpgc.jbudget125667.model.Movement"/>
+        <mapping class="it.unicam.cs.mpgc.jbudget125667.model.Category"/>
+    </session-factory>
+</hibernate-configuration>

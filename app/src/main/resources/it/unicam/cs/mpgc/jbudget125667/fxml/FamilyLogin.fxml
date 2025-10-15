@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<StackPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+           fx:controller="it.unicam.cs.mpgc.jbudget125667.controller.FamilyLoginController"
+           styleClass="familylogin-background">
+    <VBox alignment="CENTER">
+        <VBox alignment="CENTER" spacing="24" styleClass="familylogin-card">
+            <Label text="FAMILY LOGIN" styleClass="familylogin-title"/>
+            <VBox spacing="18" alignment="CENTER">
+                <TextField fx:id="usernameField" promptText="Family Username" styleClass="login-field" prefWidth="320" maxWidth="320"/>
+                <StackPane prefWidth="320" maxWidth="320">
+                    <PasswordField fx:id="passwordField" promptText="Family Password" styleClass="login-field" prefWidth="320" maxWidth="320"/>
+                    <TextField fx:id="passwordTextField" promptText="Family Password" styleClass="login-field" prefWidth="320" maxWidth="320" visible="false" managed="false"/>
+                    <ToggleButton fx:id="showPasswordButton" styleClass="show-password-btn" onAction="#toggleShowPassword" StackPane.alignment="CENTER_RIGHT" translateX="-8">
+                        <graphic><Label text="👁" style="-fx-font-size:22px; -fx-text-fill:#3D67FF;"/></graphic>
+                    </ToggleButton>
+                </StackPane>
+            </VBox>
+            <HBox spacing="18" alignment="CENTER">
+                <Button fx:id="loginButton" text="LOGIN" onAction="#handleLogin" styleClass="login-register-btn"/>
+                <Button fx:id="registerButton" text="REGISTER" onAction="#handleGoToRegister" styleClass="reg-btn"/>
+                <Hyperlink onAction="#handleImport" text="Import from file" />
+            </HBox>
+            <Label fx:id="messageLabel" styleClass="message-label"/>
+        </VBox>
+    </VBox>
+</StackPane>

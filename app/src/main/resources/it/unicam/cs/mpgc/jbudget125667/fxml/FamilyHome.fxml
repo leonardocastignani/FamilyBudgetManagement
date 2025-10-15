@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<BorderPane maxHeight="800" maxWidth="1280" minHeight="800" minWidth="1280" prefHeight="800" prefWidth="1280" styleClass="home-background" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.mpgc.jbudget125667.controller.FamilyHomeController">
+   <top>
+      <VBox alignment="CENTER">
+         <children>
+            <TextFlow styleClass="home-title" textAlignment="CENTER">
+               <children>
+                  <Text text="Hi " />
+                  <Text fx:id="familyNameText" styleClass="home-title-bold" />
+                  <Text text=" family, welcome back!" />
+               </children>
+            </TextFlow>
+            <HBox styleClass="horizontal-separator" />
+         </children>
+      </VBox>
+   </top>
+   <left>
+      <VBox styleClass="sidebar" BorderPane.alignment="CENTER">
+         <children>
+            <Label styleClass="sidebar-title" text="ACTIONS" />
+            <Button onAction="#handleAddAccount" styleClass="sidebar-btn" text="Add Account" />
+            <Button onAction="#handleShowScheduler" styleClass="sidebar-btn" text="Scheduler" />
+            <Button onAction="#handleShowAllMovements" styleClass="sidebar-btn" text="All Movements" />
+            <Button onAction="#handleExport" styleClass="sidebar-btn" text="Export Data" />
+            <Pane VBox.vgrow="ALWAYS" />
+            <Button fx:id="backButton" onAction="#handleLogout" styleClass="exit-btn" text="Logout" >
+               <VBox.margin>
+                  <Insets bottom="47" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Dashboard">
+               <content>
+                  <ScrollPane fitToWidth="true" styleClass="scroll-pane">
+                     <content>
+                        <VBox fx:id="dashboardContainer" spacing="20.0" styleClass="dashboard-container" />
+                     </content>
+                  </ScrollPane>
+               </content>
+          </Tab>
+          <Tab text="Reports &amp; Stats">
+               <content>
+                  <ScrollPane fitToWidth="true" styleClass="scroll-pane">
+                     <content>
+                        <VBox fx:id="reportsContainer" spacing="20.0" styleClass="dashboard-container" />
+                     </content>
+                  </ScrollPane>
+               </content>
+          </Tab>
+            <Tab text="Bank Accounts">
+               <content>
+                  <ScrollPane fitToWidth="true" styleClass="scroll-pane">
+                     <content>
+                        <VBox fx:id="accountsContainer" spacing="15.0" styleClass="dashboard-container" />
+                     </content>
+                  </ScrollPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
